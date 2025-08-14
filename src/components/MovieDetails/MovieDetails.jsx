@@ -41,7 +41,9 @@ export default function MovieDetails() {
   const [movie, setMovie] = useState(null);
 
   useEffect(() => {
-    fetch("/data/movies.xlsx")
+    // fetch("/data/movies.xlsx")
+    fetch(`${process.env.PUBLIC_URL}/data/movies.xlsx`)
+
       .then((res) => res.arrayBuffer())
       .then((buffer) => {
         const workbook = XLSX.read(buffer, { type: "array" });

@@ -9,7 +9,9 @@ export default function About() {
   const [slidesToShow, setSlidesToShow] = useState(getSlides());
 
   useEffect(() => {
-    fetch("/data/movies.xlsx")
+    // fetch("/data/movies.xlsx")
+    fetch(`${process.env.PUBLIC_URL}/data/movies.xlsx`)
+
       .then((res) => res.arrayBuffer())
       .then((buffer) => {
         const workbook = XLSX.read(buffer, { type: "array" });

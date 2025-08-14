@@ -1,10 +1,11 @@
-// MovieList.jsx
+// src/components/MovieList/MovieList.jsx
 import React, { useEffect, useState } from "react";
 import * as XLSX from "xlsx";
-import styles from "./MovieList.module.css";
+import styles from "./MovieList.module.css"; // تأكد أن الملف موجود
 import { useLocation } from "react-router-dom";
 import { FaStar, FaRegStar, FaStarHalfAlt } from "react-icons/fa";
 
+// 🔹 دالة قراءة ملف الإكسل
 function useExcelData(url) {
   const [data, setData] = useState([]);
 
@@ -24,6 +25,7 @@ function useExcelData(url) {
   return data;
 }
 
+// 🔹 دالة رسم النجوم
 function renderStars(rating) {
   const stars = [];
   const score = rating / 2;
@@ -40,10 +42,11 @@ function renderStars(rating) {
   return stars;
 }
 
+// 🔹 المكوّن الرئيسي
 export default function MovieList({ search }) {
-  const movies = useExcelData("/data/movies.xlsx");
+  const movies = useExcelData(`${process.env.PUBLIC_URL}/data/movies.xlsx`);
   const searchTerm = search ? search.toLowerCase() : "";
-  const location = useLocation(); // مراقبة المسار
+  const location = useLocation();
 
   // Scroll to top عند دخول صفحة /movies
   useEffect(() => {

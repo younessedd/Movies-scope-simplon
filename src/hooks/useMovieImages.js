@@ -6,7 +6,9 @@ export default function useMovieImages() {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
-    fetch("/data/movies.xlsx")
+    // fetch("/data/movies.xlsx")
+    fetch(`${process.env.PUBLIC_URL}/data/movies.xlsx`)
+
       .then((res) => res.arrayBuffer())
       .then((data) => {
         const workbook = XLSX.read(data, { type: "array" });
