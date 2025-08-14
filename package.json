@@ -1,12 +1,8 @@
 {
-  "name": "moviescopebreef",
-  "version": "0.1.0",
+  "name": "movies-scope-simplon",
+  "version": "1.0.0",
   "private": true,
   "homepage": "https://younessedd.github.io/Movies-scope-simplon",
-
-
- 
-
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.6.4",
