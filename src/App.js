@@ -1,5 +1,6 @@
+// App.js
 import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 import Navbar from "./components/Navbar/Navbar";
 import PageHero from "./components/PageHero/PageHero";
@@ -13,16 +14,13 @@ import "./styles/global.css";
 export default function App() {
   const [search, setSearch] = useState("");
 
-
-  
-
   return (
-    <Router>
+    <>
       <Navbar search={search} setSearch={setSearch} />
 
       <main style={{ minHeight: "80vh", padding: "5rem 2rem 1rem" }}>
         <Routes>
-          <Route path="/" element={<PageHero  />} />
+          <Route path="/" element={<PageHero />} />
           <Route path="/movies" element={<MovieList search={search} />} />
           <Route path="/movie/:id" element={<MovieDetails />} />
           <Route path="/about" element={<About />} />
@@ -31,6 +29,6 @@ export default function App() {
       </main>
 
       <Footer />
-    </Router>
+    </>
   );
 }

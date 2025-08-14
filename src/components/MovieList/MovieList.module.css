@@ -100,6 +100,6 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-  .img { height: 230px; }
+  .img { height: 530px; }
   .list { margin-top: 3rem; }
 }

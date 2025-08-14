@@ -68,26 +68,35 @@ export default function About() {
         borderRadius: "0 0 30px 30px",
         maxWidth: 900,
         margin: "0 auto 4rem",
-        padding: "3rem 2rem"
+        
       }}>
-        <h1 style={{
-          fontSize: "3.2rem",
-          fontWeight: "900",
-          marginBottom: "1rem",
-          color: "#fff",
-          textShadow: "2px 2px 12px rgba(255, 107, 107, 0.9)", // orange text shadow
-          letterSpacing: "2px",
-          textTransform: "uppercase"
-        }}>
-          About MovieScope
-        </h1>
+     <h1
+  style={{
+    fontSize: "3.2rem",
+    fontWeight: "900",
+    marginBottom: "1rem",
+    color: "#fff",
+    textShadow: "2px 2px 12px rgba(255, 107, 107, 0.9)",
+    letterSpacing: "2px",
+    textTransform: "uppercase",
+    display: "flex",
+    justifyContent: "center", // وسط أفقياً
+    alignItems: "center", // وسط عمودياً
+    height: "auto", // ملء الشاشة عمودياً
+    margin: 0 // إزالة أي هامش خارجي
+  }}
+>
+  MovieScope
+</h1>
+
         <p style={{
           fontSize: "1.3rem",
           maxWidth: 800,
           margin: "auto",
           lineHeight: 1.8,
           color: "rgba(255,255,255,0.9)",
-          fontWeight: "500"
+          fontWeight: "500",
+          
         }}>
           MovieScope is your ultimate platform to explore, review, and recommend movies. Discover trending films, dive into details, and enjoy a sleek and modern browsing experience.
         </p>
@@ -130,9 +139,9 @@ export default function About() {
                 box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4); 
                 z-index: 2; 
               }
-              @media (max-width: 1024px) { .movie-slide img { height: 350px; } }
+              @media (max-width: 1024px) { .movie-slide img { height: 450px; } }
               @media (max-width: 768px) { 
-                .movie-slide img { height: 230px; } 
+                .movie-slide img { height: 330px; } 
                 .slick-slide { transform: none !important; filter: brightness(1) !important; box-shadow: none !important; } 
               }
             `}</style>

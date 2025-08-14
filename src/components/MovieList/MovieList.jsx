@@ -1,11 +1,11 @@
 // src/components/MovieList/MovieList.jsx
 import React, { useEffect, useState } from "react";
 import * as XLSX from "xlsx";
-import styles from "./MovieList.module.css"; // تأكد أن الملف موجود
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { FaStar, FaRegStar, FaStarHalfAlt } from "react-icons/fa";
+import styles from "./MovieList.module.css";
 
-// 🔹 دالة قراءة ملف الإكسل
+// قراءة ملف Excel
 function useExcelData(url) {
   const [data, setData] = useState([]);
 
@@ -14,9 +14,8 @@ function useExcelData(url) {
       .then((res) => res.arrayBuffer())
       .then((buffer) => {
         const workbook = XLSX.read(buffer, { type: "array" });
-        const sheetName = workbook.SheetNames[0];
-        const worksheet = workbook.Sheets[sheetName];
-        const jsonData = XLSX.utils.sheet_to_json(worksheet);
+        const sheet = workbook.SheetNames[0];
+        const jsonData = XLSX.utils.sheet_to_json(workbook.Sheets[sheet]);
         setData(jsonData);
       })
       .catch((err) => console.error("Error reading Excel file:", err));
@@ -25,7 +24,7 @@ function useExcelData(url) {
   return data;
 }
 
-// 🔹 دالة رسم النجوم
+// رسم النجوم
 function renderStars(rating) {
   const stars = [];
   const score = rating / 2;
@@ -42,13 +41,12 @@ function renderStars(rating) {
   return stars;
 }
 
-// 🔹 المكوّن الرئيسي
+// المكون الرئيسي
 export default function MovieList({ search }) {
   const movies = useExcelData(`${process.env.PUBLIC_URL}/data/movies.xlsx`);
   const searchTerm = search ? search.toLowerCase() : "";
   const location = useLocation();
 
-  // Scroll to top عند دخول صفحة /movies
   useEffect(() => {
     if (location.pathname === "/movies") {
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -69,13 +67,7 @@ export default function MovieList({ search }) {
         <ul className={styles.list}>
           {filteredMovies.map((movie) => (
             <li key={movie.id} className={styles.item}>
-              <a
-                href={`/movie/${movie.id}`}
-                className={styles.link}
-                onClick={() =>
-                  window.scrollTo({ top: 0, behavior: "smooth" })
-                }
-              >
+              <Link to={`/movie/${movie.id}`} className={styles.link}>
                 <img
                   className={styles.img}
                   src={movie.image_url}
@@ -87,7 +79,7 @@ export default function MovieList({ search }) {
                   {renderStars(movie.rating)}
                   <span className={styles.score}>{movie.rating}/10</span>
                 </div>
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
