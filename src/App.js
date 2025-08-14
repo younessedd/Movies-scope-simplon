@@ -13,13 +13,8 @@ import "./styles/global.css";
 export default function App() {
   const [search, setSearch] = useState("");
 
-  // يمكنك جلب صور لأبطال الصفحة من ملف بيانات الأفلام أو ثابتة
-  // هنا مثال ثابت للصور للـ Hero
-  const heroImages = [
-    "/images/movie1.jpg",
-    "/images/movie2.jpg",
-    "/images/movie3.jpg",
-  ];
+
+  
 
   return (
     <Router>
@@ -27,7 +22,7 @@ export default function App() {
 
       <main style={{ minHeight: "80vh", padding: "5rem 2rem 1rem" }}>
         <Routes>
-          <Route path="/" element={<PageHero images={heroImages} />} />
+          <Route path="/" element={<PageHero  />} />
           <Route path="/movies" element={<MovieList search={search} />} />
           <Route path="/movie/:id" element={<MovieDetails />} />
           <Route path="/about" element={<About />} />
