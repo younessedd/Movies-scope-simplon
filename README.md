@@ -1,70 +1,84 @@
-# Getting Started with Create React App
+🎬 Movies Scope Simplon
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A responsive movie browsing web app built with React.js that allows users to explore movies, view details, and enjoy an interactive UI.
+Live Demo 👉 Movies Scope Simplon
 
-## Available Scripts
+📌 Features
 
-In the project directory, you can run:
+🔍 Browse Movies — View a collection of movies with titles, posters, and ratings.
 
-### `npm start`
+🎞 Movie Details — See detailed info including synopsis, release date, and more.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+📱 Responsive Design — Works seamlessly on desktop, tablet, and mobile devices.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+⚡ Fast Loading — Optimized for performance.
 
-### `npm test`
+🎨 Styled UI — Clean and modern interface.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+🛠 Tech Stack
 
-### `npm run build`
+Frontend: React.js, JSX, CSS3
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Routing: React Router
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Styling: CSS Modules / Custom CSS
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Data: Local JSON / API (if connected)
 
-### `npm run eject`
+Deployment: GitHub Pages
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+🚀 Getting Started
+1️⃣ Clone the repository
+git clone https://github.com/younessedd/Movies-scope-simplon.git
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2️⃣ Install dependencies
+cd Movies-scope-simplon
+npm install
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3️⃣ Run the project locally
+npm start
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+The app will run on http://localhost:3000.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4️⃣ Build for production
+npm run build
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+📂 Project Structure
+Movies-scope-simplon/
+│
+├── public/
+│   └── data/           # Movie data (Excel / JSON)
+│
+├── src/
+│   ├── components/     # UI components
+│   ├── pages/          # Page views
+│   ├── App.js          # Main app file
+│   ├── index.js        # Entry point
+│   └── styles/         # Global styles
+│
+└── package.json
 
-### Code Splitting
+🌐 Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+This project is deployed using GitHub Pages.
+To deploy:
 
-### Analyzing the Bundle Size
+npm run build
+npm run deploy
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+The live app will be available at:
+[](https://younessedd.github.io/Movies-scope-simplon/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+📜 License
 
-### Advanced Configuration
+This project is open source and available under the MIT License.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+👤 Author
 
-### Deployment
+Younes Eddanguir
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+GitHub: @younessedd
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Live Demo: [] (https://younessedd.github.io/Movies-scope-simplon/)
